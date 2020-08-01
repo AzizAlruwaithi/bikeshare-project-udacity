@@ -36,9 +36,9 @@ def get_filters():
         print('invalid input! \ntype (day), (month), or type (both)')
         date_filter = input('Would you like to filter by day, month, both or none? ')
 
-    if date_filter.lower() != both_s:
+    if date_filter.lower() not in both_s:
 
-        if date_filter.lower() == day_q:
+        if date_filter.lower() in day_q:
             day_que = input('Please choose a day \n Su, Mon, Tues, Wed, Thur, Fri, Sat: ')
             days_dict = {'su': 'Sunday', 'mon': 'Monday', 'tues': 'Tuesday', 'wed': 'Wednesday', 'thurs': 'Thursday',
                          'fri': 'Friday', 'sat': 'Saturday'}
@@ -48,7 +48,7 @@ def get_filters():
 
             day = days_dict[day_que]
 
-        if date_filter.lower() == month_q:
+        if date_filter.lower() in month_q:
             month_que = input('Please choose a month between (1-6): ')
             month_dict = {'1': 'january', '2': 'february', '3': 'march', '4': 'april', '5': 'may', '6': 'june'}
 
